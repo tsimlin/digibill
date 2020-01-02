@@ -5,10 +5,7 @@ var router = express.Router();
 const app = express();
 
 var port = process.env.PORT || 3000;
-app.get('/', (req, res) => res.send('Halloooooo'));
-app.listen(port, () => console.log("started.... "));
-
-const PDFDocument =  require('pdfkit');
+router.get('/', (req, res) => res.send('Halloooooo'));
 
 router.get('/generatePDF', async function(req, res, next) {
 var myDoc = new PDFDocument({bufferPages: true});
@@ -33,3 +30,4 @@ myDoc.end();
 });
 
 module.exports = router;
+

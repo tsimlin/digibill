@@ -1,6 +1,6 @@
 const express = require('express');
 const PDFDocument = require('pdfkit');
-var router = express.Router();
+var router = express();// = express.Router();
 
 const app = express();
 
@@ -29,5 +29,7 @@ myDoc.font('Times-Roman')
 myDoc.end();
 });
 
-module.exports = router;
+router.listen(port, () => console.log("started.... "));
+
+//module.exports = router;
 
